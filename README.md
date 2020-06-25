@@ -1,0 +1,1 @@
+# docker_for_KataGo
