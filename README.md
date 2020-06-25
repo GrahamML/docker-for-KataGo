@@ -28,7 +28,7 @@ Copy the downloaded packages and weights files to your local repository and buil
 $ cd ./docker_for_KataGo/dockerfile
 $ cp ~/Downloads/katago-v1.4.5-cuda10.2-linux-x64.zip .
 $ cp ~/Downloads/g170*.gz .
-$ docker build --tag=['name:tag'] . 
+$ docker build --tag=['image_name:tag'] . 
 ```
 + This dockerfile install the downloaded packages on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).
 + The following shows the version of Ubuntu, CUDA, and cuDNN in this container.  
