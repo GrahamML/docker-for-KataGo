@@ -31,6 +31,10 @@ $ cp ~/Downloads/g170*.gz .
 $ docker build --tag=['image_name:tag'] . 
 ```
 + This dockerfile install the downloaded packages on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).
++ The following is an example of a build command.  
+    ```
+    $ docker build --tag=katago:latest . 
+    ```
 + The following shows the version of Ubuntu, CUDA, and cuDNN in this container.  
 
     | Ubuntu | CUDA Toolkit        | cuDNN          |
