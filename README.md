@@ -31,6 +31,7 @@ $ cp ~/Downloads/g170*.gz .
 $ docker build --tag=['image_name:tag'] . 
 ```
 + This dockerfile install the downloaded packages on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).
++ If you are not in the docker group, you will need to change the `docker` command to `sudo docker`.
 + The following is an example of a build command.  
     ```
     $ docker build --tag=katago:latest . 
