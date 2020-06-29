@@ -1,4 +1,4 @@
-# docker_for_KataGo
+# docker-for-KataGo
 This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo).
 
 # 1. Prerequisites  
@@ -20,12 +20,12 @@ Download the following files:
 
 Then clone this repository:  
 ```
-$ git clone https://github.com/GrahamML/docker_for_KataGo.git
+$ git clone https://github.com/GrahamML/docker-for-KataGo.git
 ```
 ## 2.2. Build the docker image
 Copy the downloaded packages and weights files to your local repository and build:
 ```console
-$ cd ./docker_for_KataGo/dockerfile
+$ cd ./docker-for-KataGo/dockerfile
 $ cp ~/Downloads/katago-v1.4.5-cuda10.2-linux-x64.zip .
 $ cp ~/Downloads/g170*.gz .
 $ docker build --tag=['image_name:tag'] . 
