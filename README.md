@@ -5,8 +5,11 @@ This repository provides a dockerfile for building a runtime environment for [Ka
 The following are additions or limitations to the requirements of KataGo. 
 + Linux x86_64
 + NVIDIA GPU
-+ Docker or Docker-CE
-+ nvidia-docker >= 2.0
++ Docker
++ nvidia-docker2 (Docker >= 1.12) or nvidia-container-toolkit (Docker >= 19.03)  
+
+_Learn more about how to install [docker](https://github.com/Microsoft/MMdnn/blob/master/docs/InstallDockerCE.md) and [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)_
+
 
 # 2. Installation
 ## 2.1. Downloads
@@ -54,6 +57,7 @@ $ docker run \
     --name [container_name] \
     [image_name:tag]
 ```  
++ The example above is for `nvidia-docker2` case. If it's `nvidia-container-toolkit` case, change it appropriately.   
 ## 3.2. Launch the KataGo  
 Launch the AQ in this container.  The following is an example of launching in benchmark mode and GTP mode.
 ### Benchmark mode
