@@ -1,5 +1,7 @@
 # docker-for-KataGo
-[KataGo](https://github.com/lightvector/KataGo)の実行環境を構築するためのdockerfileを提供します。
+[KataGo](https://github.com/lightvector/KataGo)の実行環境を構築するためのdockerfileを提供します。  
+
+_Click [here](https://github.com/GrahamML/docker-for-KataGo/blob/master/README.md) for the README in English._
 
 # 1. 前提条件  
 KataGoの動作要件に対する追加、制約要件は以下の通りです。 
