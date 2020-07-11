@@ -104,7 +104,7 @@ GTP ready, beginning main protocol loop
 + オプションや起動モードの詳細は [KataGo's readme](https://github.com/lightvector/KataGo) を参照ください
 
 # 4. Lizzieとの連携  
-See this [wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie).  
+この[wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie)を参照ください。  
 
 ![Select](https://github.com/GrahamML/docker_for_AQ/wiki/images/Communitacion-with-Lizzie/Fig7.png)
 
