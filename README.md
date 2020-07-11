@@ -1,5 +1,7 @@
 # docker-for-KataGo
-This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo).
+This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo).  
+
+_日本語の説明は[こちら](https://github.com/GrahamML/docker-for-KataGo/blob/master/README_JP.md)を参照ください。_
 
 # 1. Prerequisites  
 The following are additions or limitations to the requirements of KataGo. 
