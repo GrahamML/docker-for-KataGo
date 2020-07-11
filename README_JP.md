@@ -103,7 +103,7 @@ Loaded model g170-b30c320x2-s4824661760-d1229536699.bin.gz
 Model name: g170-b30c320x2-s4824661760-d1229536699
 GTP ready, beginning main protocol loop
 ```  
-+ オプションや起動モードの詳細は [KataGo's readme](https://github.com/lightvector/KataGo) を参照ください
++ オプションや起動モードの詳細は [KataGoのreadme](https://github.com/lightvector/KataGo) を参照ください
 
 # 4. Lizzieとの連携  
 この[wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie)を参照ください。  
