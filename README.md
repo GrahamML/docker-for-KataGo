@@ -57,9 +57,10 @@ $ docker run \
     --name [container_name] \
     [image_name:tag]
 ```  
-+ The example above is for `nvidia-docker2` case. If it's `nvidia-container-toolkit` case, change it appropriately.   
++ The example above is for `nvidia-docker2` case. If it's `nvidia-container-toolkit` case, change it appropriately.  
+
 ## 3.2. Launch the KataGo  
-Launch the AQ in this container.  The following is an example of launching in benchmark mode and GTP mode.
+Launch the KataGo in this container.  The following is an example of launching in benchmark mode and GTP mode.
 ### Benchmark mode
 ```console
 $ cd katago
