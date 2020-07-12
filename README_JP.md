@@ -14,27 +14,20 @@ _[Docker](https://github.com/Microsoft/MMdnn/blob/master/docs/InstallDockerCE.md
 
 # 2. インストール方法
 ## 2.1. ダウンロード
-以下のファイルをダウンロードしてください。
-1. CUDA10.2-linux用 [Katago-v1.4.5](https://github.com/lightvector/KataGo/releases) リリースパッケージ  
-&emsp;`katago-v1.4.5-cuda10.2-linux-x64.zip`
-1. 訓練済みウェイト・ファイル (20/30/40ブロック)  
-&emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
-&emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
-&emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
-
-次に本リポジトリをクローンしてください。  
+本リポジトリをクローンしてください。  
 ```
 $ git clone https://github.com/GrahamML/docker-for-KataGo.git
 ```
 ## 2.2. Dockerイメージのビルド
-ダウンロードしたパッケージとウェイト・ファイルをローカルリポジトリへコピーし、ビルドしてください。
 ```console
 $ cd ./docker-for-KataGo/dockerfile
-$ cp ~/Downloads/katago-v1.4.5-cuda10.2-linux-x64.zip .
-$ cp ~/Downloads/g170*.gz .
 $ docker build --tag=['image_name:tag'] . 
 ```
-+ このdockerfileは[NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/)の上にダウンロードしたパッケージをインストールします
++ このdockerfileは[NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/)の上に、以下のリリースパッケージとウェイトファイルダウンロードし、インストールします  
+&emsp;`katago-v1.4.5-cuda10.2-linux-x64.zip`  
+&emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
+&emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
+&emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
 + Linuxアカウントがdockerグループに属していない場合は`docker`コマンドを`sudo docker`コマンドへ置き換えてください
 + 以下はビルドコマンドの一例です  
     ```
@@ -103,7 +96,8 @@ Loaded model g170-b30c320x2-s4824661760-d1229536699.bin.gz
 Model name: g170-b30c320x2-s4824661760-d1229536699
 GTP ready, beginning main protocol loop
 ```  
-+ オプションや起動モードの詳細は [KataGoのreadme](https://github.com/lightvector/KataGo) を参照ください
++ オプションや起動モードの詳細は [KataGoのreadme](https://github.com/lightvector/KataGo) を参照ください  
++ ルールを変更する場合は、起動中のコンテナにおいて `/workspace/katago/default_gtp.cfg`の中の`rules = tromp-taylor`の部分を書き換えてください
 
 # 4. Lizzieとの連携  
 この[wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie)を参照ください。  
