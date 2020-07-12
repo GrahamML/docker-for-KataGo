@@ -15,27 +15,20 @@ _Learn more about how to install [docker](https://github.com/Microsoft/MMdnn/blo
 
 # 2. Installation
 ## 2.1. Downloads
-Download the following files:
-1. [Katago-v1.4.5](https://github.com/lightvector/KataGo/releases) release pacakge for CUDA10.2-linux.  
-&emsp;`katago-v1.4.5-cuda10.2-linux-x64.zip`
-1. Pre-trained weights files for 20/30/40 blocks.  
-&emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
-&emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
-&emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
-
-Then clone this repository:  
+Clone this repository:  
 ```
 $ git clone https://github.com/GrahamML/docker-for-KataGo.git
 ```
 ## 2.2. Build the docker image
-Copy the downloaded packages and weights files to your local repository and build:
 ```console
 $ cd ./docker-for-KataGo/dockerfile
-$ cp ~/Downloads/katago-v1.4.5-cuda10.2-linux-x64.zip .
-$ cp ~/Downloads/g170*.gz .
 $ docker build --tag=['image_name:tag'] . 
 ```
-+ This dockerfile install the downloaded packages on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).
++ This dockerfile downloads the following release package and weight files and installs them on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).  
+&emsp;`katago-v1.4.5-cuda10.2-linux-x64.zip`  
+&emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
+&emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
+&emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
 + If you are not in the docker group, you will need to change the `docker` command to `sudo docker`.
 + The following is an example of a build command.  
     ```
@@ -104,7 +97,8 @@ Loaded model g170-b30c320x2-s4824661760-d1229536699.bin.gz
 Model name: g170-b30c320x2-s4824661760-d1229536699
 GTP ready, beginning main protocol loop
 ```  
-+ Refer to the [KataGo's readme](https://github.com/lightvector/KataGo) for more information on onptions and launch modes.
++ Refer to the [KataGo's readme](https://github.com/lightvector/KataGo) for more information on onptions and launch modes. 
++ To change the game rules, edit the `rules = tromp-taylor` of `/workspace/katago/default_gtp.cfg` in the current container.
 
 # 4. Communitacion with Lizzie  
 See this [wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie).  
