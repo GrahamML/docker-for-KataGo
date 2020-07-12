@@ -25,12 +25,13 @@ RUN rm *deb
 # Set the working directory to /workspace
 WORKDIR /workspace
 
-# Copy the KataGo release archive and weights
+# Download the Katago release archive and weights
 RUN mkdir /workspace/katago
-COPY katago-v1.4.5-cuda10.2-linux-x64.zip /workspace/katago
-COPY g170e-b20c256x2-s5303129600-d1228401921.bin.gz /workspace/katago
-COPY g170-b30c320x2-s4824661760-d1229536699.bin.gz /workspace/katago
-COPY g170-b40c256x2-s5095420928-d1229425124.bin.gz /workspace/katago
+RUN cd /workspace/katago \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/katago-v1.4.5-cuda10.2-linux-x64.zip \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b30c320x2-s4824661760-d1229536699.bin.gz \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b40c256x2-s5095420928-d1229425124.bin.gz \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170e-b20c256x2-s5303129600-d1228401921.bin.gz
 
 # Unzip KataGo
 RUN cd /workspace/katago \
