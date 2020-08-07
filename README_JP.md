@@ -60,27 +60,6 @@ $ docker run \
 $ cd katago
 $ ./katago benchmark \
     -model g170-b40c256x2-s5095420928-d1229425124.bin.gz
-2020-06-25 10:24:19+0000: Loading model and initializing benchmark...
-2020-06-25 10:24:19+0000: nnRandSeed0 = 11436641883002196670
-:
-Possible numbers of threads to test: 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96,
-:
-numSearchThreads =  5: (baseline)
-numSearchThreads =  6:   +48 Elo
-numSearchThreads = 10:  +128 Elo
-numSearchThreads = 12:  +156 Elo
-numSearchThreads = 16:  +175 Elo
-numSearchThreads = 20:  +214 Elo
-numSearchThreads = 24:  +240 Elo
-numSearchThreads = 32:  +256 Elo (recommended)
-numSearchThreads = 40:  +232 Elo
-numSearchThreads = 48:  +226 Elo
-numSearchThreads = 64:  +226 Elo
-
-If you care about performance, you may want to edit numSearchThreads in /workspace/katago/default_gtp.cfg based on the above results!
-If you intend to do much longer searches, configure the seconds per game move you expect with the '-time' flag and benchmark again.
-If you intend to do short or fixed-visit searches, use lower numSearchThreads for better strength, high threads will weaken strength.
-If interested see also other notes about performance and mem usage in the top of /workspace/katago/default_gtp.cfg
 ```
 
 ### GTP モード
@@ -89,12 +68,6 @@ $ cd katago
 $ ./katago gtp \
     -model g170-b30c320x2-s4824661760-d1229536699.bin.gz \
     -config default_gtp.cfg  
-KataGo v1.4.5
-Using TrompTaylor rules initially, unless GTP/GUI overrides this
-Loaded config default_gtp.cfg
-Loaded model g170-b30c320x2-s4824661760-d1229536699.bin.gz
-Model name: g170-b30c320x2-s4824661760-d1229536699
-GTP ready, beginning main protocol loop
 ```  
 + オプションや起動モードの詳細は [KataGoのreadme](https://github.com/lightvector/KataGo) を参照ください  
 + ルールを変更する場合は、起動中のコンテナにおいて `/workspace/katago/default_gtp.cfg`の中の`rules = tromp-taylor`の部分を書き換えてください
