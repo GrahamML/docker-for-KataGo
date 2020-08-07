@@ -24,7 +24,7 @@ $ cd ./docker-for-KataGo/dockerfile
 $ docker build --tag=['image_name:tag'] . 
 ```
 + このdockerfileは[NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/)の上に、以下のリリースパッケージとウェイトファイルダウンロードし、インストールします  
-&emsp;`katago-v1.4.5-cuda10.2-linux-x64.zip`  
+&emsp;`katago-v1.5.0-cuda10.2-linux-x64.zip`  
 &emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
 &emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
 &emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
