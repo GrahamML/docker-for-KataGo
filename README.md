@@ -59,7 +59,8 @@ Launch the KataGo in this container.  The following is an example of launching i
 ### Benchmark mode
 ```console
 $ cd katago
-$ ./katago benchmark -model g170-b40c256x2-s5095420928-d1229425124.bin.gz
+$ ./katago benchmark \
+    -model g170-b40c256x2-s5095420928-d1229425124.bin.gz
 ```
 
 ### GTP mode
