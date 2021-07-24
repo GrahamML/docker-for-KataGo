@@ -1,7 +1,7 @@
 # Use an NVIDIA CUDA official docker image
 #   Refer to the following URL for available tags.
 #   https://hub.docker.com/r/nvidia/cuda/tags
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu18.04
 
 ENV DEBCONF_NOWARNINGS yes
 ENV DEBIAN_FRONTEND noninteractive
@@ -26,17 +26,17 @@ RUN rm *deb
 WORKDIR /workspace
 
 # Download the Katago release archive and weights
-# The software tool version is 1.6.0, but the latest and strongest weights are still v1.4.5
+# The software tool version is 1.9.1, but the latest and strongest weights are still v1.4.5
 RUN mkdir /workspace/katago
 RUN cd /workspace/katago \
-    && wget https://github.com/lightvector/KataGo/releases/download/v1.6.0/katago-v1.6.0-gpu-cuda10.2-linux-x64.zip \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.9.1/katago-v1.9.1-cuda11.1-linux-x64.zip \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b30c320x2-s4824661760-d1229536699.bin.gz \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b40c256x2-s5095420928-d1229425124.bin.gz \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170e-b20c256x2-s5303129600-d1228401921.bin.gz
 
 # Unzip KataGo
 RUN cd /workspace/katago \
-    && unzip katago-v1.6.0-gpu-cuda10.2-linux-x64.zip \
+    && unzip katago-v1.9.1-cuda11.1-linux-x64.zip \
     && chmod +x katago \
     && rm *zip
 
