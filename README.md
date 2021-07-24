@@ -1,5 +1,5 @@
 # docker-for-KataGo
-This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo).  
+This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo) v1.9.1.  
 
 _日本語の説明は[こちら](https://github.com/GrahamML/docker-for-KataGo/blob/master/README_JP.md)を参照ください。_
 
@@ -25,7 +25,7 @@ $ cd ./docker-for-KataGo/dockerfile
 $ docker build --tag=['image_name:tag'] . 
 ```
 + This dockerfile downloads the following release package and weight files and installs them on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).  
-&emsp;`katago-v1.6.0-gpu-cuda10.2-linux-x64.zip`  
+&emsp;`katago-v1.9.1-cuda11.1-linux-x64.zip`  
 &emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
 &emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
 &emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
@@ -38,7 +38,7 @@ $ docker build --tag=['image_name:tag'] .
 
     | Ubuntu | CUDA Toolkit        | cuDNN          |
     |--------|---------------------|----------------|
-    | 18.04  | 10.2.89             | 7.6.5.32       |
+    | 18.04  | 11.1                | 8.0.5          |
 
 # 3. How to run
 ## 3.1. Start the docker image
