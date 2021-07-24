@@ -38,7 +38,7 @@ $ docker build --tag=['image_name:tag'] .
 
     | Ubuntu | CUDA Toolkit        | cuDNN          |
     |--------|---------------------|----------------|
-    | 18.04  | 11.1                | 8.0.5          |
+    | 18.04  | 11.1.1              | 8.0.5          |
 
 # 3. How to run
 ## 3.1. Start the docker image
