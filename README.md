@@ -1,5 +1,5 @@
 # docker-for-KataGo
-This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo) v1.9.1.  
+This repository provides a dockerfile for building a runtime environment for [KataGo](https://github.com/lightvector/KataGo) v1.10.0.  
 
 _日本語の説明は[こちら](https://github.com/GrahamML/docker-for-KataGo/blob/master/README_JP.md)を参照ください。_
 
@@ -25,7 +25,7 @@ $ cd ./docker-for-KataGo/dockerfile
 $ docker build --tag=['image_name:tag'] . 
 ```
 + This dockerfile downloads the following release package and weight files and installs them on the [NVIDIA CUDA official docker image](https://hub.docker.com/r/nvidia/cuda/).  
-&emsp;`katago-v1.9.1-cuda11.1-linux-x64.zip`  
+&emsp;`katago-v1.10.0-cuda11.1-linux-x64.zip`  
 &emsp;`g170e-b20c256x2-s5303129600-d1228401921.bin.gz`  
 &emsp;`g170-b30c320x2-s4824661760-d1229536699.bin.gz`  
 &emsp;`g170-b40c256x2-s5095420928-d1229425124.bin.gz`
@@ -73,10 +73,26 @@ $ ./katago gtp \
 + Refer to the [KataGo's readme](https://github.com/lightvector/KataGo) for more information on onptions and launch modes. 
 + To change the game rules, edit the `rules = tromp-taylor` of `/workspace/katago/default_gtp.cfg` in the current container.
 
-# 4. Communitacion with Lizzie  
+# 4. Contribution to "KataGo Distributed Training"
+You can immediately contribute to "Katago Distributed Training" with this Docker image.  
+See the following steps.
+
++ Create a user account as described in "How to Contribute" at [https://katagotraining.org/](https://katagotraining.org/)
++ Edit the `./katago/contribute_example.cfg` file
+  + username = Fill in your username here
+  + password = Fill in your password here
+  + maxSimultaneousGames = Fill in a number here  
+    Set 4, 8, 16, ... depending on your GPU capability. See comment line in the cfg file for details
++ Start Katago from command line with the `contribution` option as follows:
+  ```sh
+  $ ./katago contribute -config contribute_example.cfg
+  ```  
++ You can check the status of your contribution at [https://katagotraining.org/contributions/ ](https://katagotraining.org/contributions/)
+
+# 5. Communitacion with Lizzie  
 See this [wiki](https://github.com/GrahamML/docker_for_AQ/wiki/Communitacion-with-Lizzie).  
 
 ![Select](https://github.com/GrahamML/docker_for_AQ/wiki/images/Communitacion-with-Lizzie/Fig7.png)
 
-# 5. License  
+# 6. License  
 [MIT](https://github.com/GrahamML/docker_for_KataGo/blob/master/LICENSE)
