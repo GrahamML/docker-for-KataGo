@@ -29,14 +29,14 @@ WORKDIR /workspace
 # The software tool version is 1.10.0, but the latest and strongest weights are still v1.4.5
 RUN mkdir /workspace/katago
 RUN cd /workspace/katago \
-    && wget https://github.com/lightvector/KataGo/releases/download/v1.10.0/katago-v1.10.0-cuda11.1-linux-x64.zip \
+    && wget https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-cuda11.1-linux-x64.zip \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b30c320x2-s4824661760-d1229536699.bin.gz \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b40c256x2-s5095420928-d1229425124.bin.gz \
     && wget https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170e-b20c256x2-s5303129600-d1228401921.bin.gz
 
 # Unzip KataGo
 RUN cd /workspace/katago \
-    && unzip katago-v1.10.0-cuda11.1-linux-x64.zip \
+    && unzip katago-v1.11.0-cuda11.1-linux-x64.zip \
     && chmod +x katago \
     && rm *zip
 
